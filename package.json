@@ -1,0 +1,16 @@
+{
+    "name": "aws-lambda-magic",
+    "version": "0.0.1",
+    "description": "test",
+    "main": "index.js",
+    "keywords": [
+        "aws",
+        "lambda",
+        "image"
+    ],
+    "author": "Yoshiaki Sugimoto",
+    "license": "MIT",
+    "dependencies": {
+        "twitter": "^1.2.5"
+    }
+}
