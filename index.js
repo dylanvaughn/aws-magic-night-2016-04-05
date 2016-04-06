@@ -35,7 +35,7 @@ exports.handler = function(event, context) {
                 access_token_key:'717535943167619072-fj1hrhGU96JClWZ1zSMl8GDls3qIsWd',
                 access_token_secret: '8GOGTDA8uY5T78GGMzlkQLaQE7nxuhyxyHMXEUZKDMHFe'
             });
-            twitter.post('statuses/update', {status: 'I Love Twitter!!!'},  function(error, tweet, response) {
+            twitter.post('statuses/update', {status: 'I Love Twitter'},  function(error, tweet, response) {
                 if(error) {
                     context.fail(error);
                 }
