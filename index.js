@@ -44,23 +44,23 @@ exports.handler = function(event, context) {
                 context.succeed(data.ContentType);
             });
 
-            // console.log('CONTENT TYPE:', data.ContentType);
-            // fs.writeFile("/tmp/test.png", data, function (err) { 
-            //    if (err) { 
-            //        console.log("write failed");
-            //        context.fail("writeFile failed: " + err); 
-            //    } else { 
-            //        console.log("write succeeded");
-            //        im.readMetadata("/tmp/test.png", function(err, metadata){
-            //           console.log("inside readMetadata");
-            //            if (err) {
-            //                context.fail("readMetadata failed: " + err); 
-            //            }
-            //            console.log('Shot at '+metadata.exif.dateTimeOriginal);
-            //            context.succeed(data.ContentType);
-            //        });
-            //    }
-            //});
+            console.log('CONTENT TYPE:', data.ContentType);
+            fs.writeFile("/tmp/test.png", data, function (err) { 
+               if (err) { 
+                   console.log("write failed");
+                   context.fail("writeFile failed: " + err); 
+               } else { 
+                   console.log("write succeeded");
+                   im.readMetadata("/tmp/test.png", function(err, metadata){
+                      console.log("inside readMetadata");
+                       if (err) {
+                           context.fail("readMetadata failed: " + err); 
+                       }
+                       console.log('Shot at '+metadata.exif.dateTimeOriginal);
+                       context.succeed(data.ContentType);
+                   });
+               }
+            });
         }
     });
 };
